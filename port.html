@@ -21,6 +21,13 @@
     max-width: 1200px;
     margin: 0 auto;
     }
+    .dist{
+        background: linear-gradient(to right, #121212, #bd9100);
+        background-clip: dist;
+        color: transparent;
+        -webkit-background-clip: text;
+        display: inline;
+    }
 
     /* Header styles */
     .hero {
@@ -185,6 +192,51 @@
     .evi-grid img:hover {
         transform: scale(1.1);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+
+    .image-container {
+    position: relative;
+    width: 300px; /* Adjust as necessary */
+    }
+
+    .image-container img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.3s ease; /* Optional transition for the image */
+    }
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0; /* Initially hidden */
+        transition: opacity 0.3s ease; /* Fade in effect */
+    }
+
+    .image-container:hover .overlay {
+        opacity: 1; /* Show overlay on hover */
+    }
+
+    .overlay p {
+        margin: 0;
+        font-size: 18px;
+        text-align: center;
+        transform: translateY(10px); /* Optional: Slide in effect */
+        opacity: 0; /* Initially hidden */
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .image-container:hover .overlay p {
+        transform: translateY(0); /* Reset position */
+        opacity: 1; /* Fade in text */
     }
 
     /* Social icon hover effect */
@@ -473,7 +525,7 @@
     <header class="hero">
         <div class="container">
         <div class="branding">
-            <h1>Akinrinade Mayowa</h1>
+            <h2  class="dist">Akinrinade Mayowa</h2>
         </div>
         <nav class="navbar">
             <ul>
@@ -610,20 +662,59 @@
         <div class="container">
             <h2>My Portfolio</h2>
             <div class="portfolio-grid">
-            <a href="https://isaiahofillorin.github.io/ShopWell-U.I/home"><img src="portimg1.jpg" alt="Portfolio Item"></a>
-            <a href="https://isaiahofillorin.github.io/Ecommerce-Website-Sample./#"><img src="portimg2.jpg" alt="Portfolio Item"></a>
-            <a href="https://akinrinademayowa1.github.io/electric-car-industry-website/"><img src="portimg1.jpg" alt="Portfolio Item"></a>
+                <a href="https://isaiahofillorin.github.io/ShopWell-U.I/home">
+                <div class="image-container">
+                        <img src="portimg1.jpg" alt="Portfolio Item">
+                    <div class="overlay">
+                        <p>This is a meat store website fully optimized</p>
+                        <P>HTML5, CSS,Javascript,Form Submit,Tailwind css, react.js, php, SQL, payment Gateway,Responsive development</P>
+                    </div>
+                </div>
+                </a>
+                <a href="https://isaiahofillorin.github.io/Ecommerce-Website-Sample./#">
+                <div class="image-container">
+                        <img src="portimg2.jpg" alt="Portfolio Item">
+                    <div class="overlay">
+                        <p>This is an Ecommerce website, payment systems fully optimized</p>
+                        <P>HTML5, CSS,Javascript, react.js, php, SQL, payment Gateway,Tailwind CSS, Responsive development</P>
+                    </div>
+                </div>
+                </a>
+                <a href="https://akinrinademayowa1.github.io/electric-car-industry-website/">
+                <div class="image-container">
+                        <img src="portimg1.jpg" alt="Portfolio Item">
+                    <div class="overlay">
+                        <p>This is an electric car Company Website
+                        <P>HTML5, CSS,Javascript, react.js,Form Submit, php, SQL, payment Gateway,Responsive development</P>
+                        </p>
+                    </div>
+                </div></a>
             </div>
-        </div>
+        </p>
         </section>
         <p></p>
         <section class="portfolio">
             <div class="container">
                 <h2 style="text-align: center;">Websites Performances</h2>
                 <div class="evi-grid">
-                <img src="evi1.jpg" alt="Portfolio Item">
-                <img src="evi2.jpg" alt="Portfolio Item">
-                <img src="evi3.jpg" alt="Portfolio Item">
+                <div class="image-container">
+                    <img src="evi1.jpg" alt="Portfolio Item">
+                    <div class="overlay">
+                        <p>Perforamce--------100%,<br> Acessibility-------70,<br>performance--------100  <br>SEO-------73,<br> Best Performance---------96, <br>Total Score-------100</p>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="evi2.jpg" alt="Portfolio Item">
+                    <div class="overlay">
+                        <p>Perforamce--------98%,<br> Acessibility-------71,<br>performance--------98  <br>SEO-------73,<br> Best Performance---------96, <br>Total Score-------98</p>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="evi3.jpg" alt="Portfolio Item">
+                    <div class="overlay">
+                        <p>Perforamce--------100%,<br> Acessibility-------70,<br>performance--------99 <br>SEO-------82,<br> Best Performance---------96, <br>Total Score-------99</p>
+                    </div>
+                </div>
                 </div>
             </div>
         </section>
