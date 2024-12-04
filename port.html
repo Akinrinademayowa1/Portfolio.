@@ -1,0 +1,674 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="My Portfolio website" content="Akinrinade Mayowa Porfolio Website">
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General styles */
+    body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #fff;
+    }
+
+    .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    }
+
+    /* Header styles */
+    .hero {
+    background: linear-gradient(to right, #f9c822, #121212);
+    color: #000;
+    padding: 3rem 0;
+    }
+
+    .branding h1 {
+    font-size: 2.5rem;
+    color: #f9c822;
+    }
+
+    .navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+
+    .navbar li {
+    margin: 0 1rem;
+    }
+
+    .navbar a {
+    text-decoration: none;
+    color: #fff;
+    }
+
+    .navbar .phone {
+    font-weight: bold;
+    color: #f9c822;
+    }
+
+    .intro {
+    text-align: center;
+    margin-top: 2rem;
+    }
+
+    .intro h2 {
+    font-size: 2rem;
+    }
+
+    button {
+    padding: 0.8rem 1.5rem;
+    background-color: #f9c822;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    }
+
+    /* About Section */
+    .about {
+    display: flex;
+    justify-content: space-between;
+    padding: 4rem 0;
+    }
+
+    .about-text,
+    .culture {
+    max-width: 45%;
+    }
+
+    .social-icons a {
+    margin: 0 0.5rem;
+    color: #fff;
+    }
+
+    /* Services Section */
+    .services {
+    text-align: center;
+    padding: 4rem 0;
+    }
+
+    .service-card {
+    display: inline-block;
+    background: #1f1f1f;
+    margin: 1rem;
+    padding: 1.5rem;
+    border-radius: 10px;
+    width: 30%;
+    }
+
+    /* Freelance Section */
+    .freelance {
+    text-align: center;
+    background-color: #f9c822;
+    color: #000;
+    padding: 3rem 0;
+    }
+
+    /* Portfolio Section */
+    .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    }
+
+    .portfolio-grid img {
+    width: 80%;
+    border-radius: 5px;
+    max-height: 500px;
+    }
+    /* Portfolio Section */
+    .evi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5rem;
+    }
+
+    .evi-grid img {
+    width: 80%;
+    border-radius: 5px;
+    max-height: 300px;
+    }
+     /* Animation for section headings */
+    h2 {
+        position: relative;
+        animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Button hover effect */
+    button:hover {
+        background-color: #121212;
+        color: #f9c822;
+        transform: scale(1.05);
+        transition: all 0.3s ease;
+    }
+
+    /* Navbar links hover effect */
+    .navbar a:hover {
+        color: #f9c822;
+        text-shadow: 0 0 10px #f9c822;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* Portfolio item hover effect */
+    .portfolio-grid img {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .portfolio-grid img:hover {
+        transform: scale(1.1);
+        box-shadow: 0 2px 7px rgb(161, 161, 161);
+    }
+    /* Portfolio item hover effect */
+    .evi-grid img {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .evi-grid img:hover {
+        transform: scale(1.1);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Social icon hover effect */
+    .social-icons a:hover {
+        color: #f9c822;
+        transform: scale(1.2);
+        transition: all 0.3s ease;
+    }
+
+    /* Service card hover effect */
+    .service-card {
+        transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .service-card:hover {
+        transform: translateY(-10px);
+        background-color: #2a2a2a;
+    }
+
+    /* Freelance section button hover effect */
+    .freelance button:hover {
+        background-color: #121212;
+        color: #fff;
+        border: 2px solid #fff;
+        transform: scale(1.1);
+    }
+
+    .skills-section {
+    text-align: center;
+    padding: 10px;
+    }
+
+    .skills-title {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    position: relative;
+    }
+
+    .skills-title::after {
+    content: "Skills";
+    font-size: 5em;
+    color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    }
+
+    .skills-subtitle {
+    font-size: 1em;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.7);
+    }
+
+    .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: 0 auto;
+    }
+
+    .skill {
+    width: 45%;
+    margin-bottom: 20px;
+    }
+
+    .skill-name {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    }
+
+    .skill-bar {
+    background-color: #333;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 10px;
+    margin: 5px 0;
+    }
+
+    .skill-progress {
+    background-color: #ffa500;
+    height: 100%;
+    width: 0; /* Start from 0 for animation */
+    animation: fillBar 4s ease-in-out forwards; /* Apply animation */
+    }
+
+    /* Animation for progress bar */
+    @keyframes fillBar {
+    from {
+        width: 0;
+    }
+    to {
+        width: var(--skill-width); /* Use the custom width defined in the inline style */
+    }
+    }
+
+    .skill-percentage {
+    text-align: right;
+    font-size: 0.9em;
+    color: #fff;
+    }
+
+
+        .star {
+    font-size: 30px;
+    color: lightgray; /* Default color */
+    animation: sparkle 1.5s infinite; /* Apply sparkle animation */
+    }
+
+    .star.filled {
+    color: gold; /* Filled stars color */
+    animation: sparkle 1.5s infinite; /* Apply sparkle animation */
+    }
+
+    @keyframes sparkle {
+    0% {
+        text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 15px gold;
+        opacity: 0.8;
+    }
+    50% {
+        text-shadow: 0 0 15px gold, 0 0 30px gold, 0 0 45px gold;
+        opacity: 1;
+    }
+    100% {
+        text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 15px gold;
+        opacity: 0.8;
+    }
+    }
+
+
+    /* Media Queries */
+
+/* Small screens (e.g., mobile devices) */
+@media (max-width: 600px) {
+    .hero {
+        padding: 2rem 0; /* Less padding on mobile */
+    }
+
+    .branding h1 {
+        font-size: 2rem; /* Smaller font size */
+    }
+
+    .intro h2 {
+        font-size: 1.5rem; /* Smaller font size */
+    }
+
+    .about {
+        flex-direction: column; /* Stack columns vertically */
+        align-items: center;
+    }
+
+    .about-text, .culture {
+        max-width: 90%; /* Allow more width on smaller screens */
+        margin-bottom: 2rem;
+    }
+
+    .service-card {
+        width: 80%; /* Make service cards wider on small screens */
+    }
+
+    .portfolio-grid {
+        grid-template: 1fr; /* Stack portfolio items in a single column */
+    }
+
+    .evi-grid {
+        grid-template: 1fr; /* Stack the items in a single column */
+        justify-content: center;
+    }
+    button {
+        padding: 1rem 2rem; /* Make buttons larger for easier tapping */
+    }
+    .phone{
+        display: none;
+    }
+    .skills-title {
+    font-size: 15px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    position: relative;
+    }
+
+    .skills-title::after {
+    content: "Skills";
+    font-size: 30;
+    color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    top: 40px;
+    transform: translateX(-50%);
+    z-index: -1;
+    }
+    .skills-container {
+    max-width: 600px;
+    }
+}
+
+/* Medium screens (e.g., tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+
+    .hero {
+        padding: 2.5rem 0; /* Moderate padding for tablets */
+    }
+
+    .branding h1 {
+        font-size: 2.2rem; /* Slightly larger font size */
+    }
+
+    .intro h2 {
+        font-size: 1.8rem; /* Slightly larger font size */
+    }
+
+    .about {
+        flex-direction: row; /* Align columns side by side */
+        justify-content: space-between;
+    }
+
+    .about-text, .culture {
+        max-width: 45%; /* Allow two items side by side */
+        margin-bottom: 2rem;
+    }
+
+    .service-card {
+        width: 45%; /* Adjust card width for medium screens */
+    }
+
+    .portfolio-grid {
+        grid-template: repeat(2, 1fr); /* Two columns for tablets */
+    }
+
+    .evi-grid {
+        grid-template: repeat(2, 1fr); /* Two columns for better visibility */
+    }
+
+    button {
+        padding: 0.8rem 1.5rem; /* Adjust button size for tablets */
+    }
+}
+
+/* Large screens (e.g., desktops) */
+@media (min-width: 1025px) {
+
+    .hero {
+        padding: 3rem 0; /* More padding for desktops */
+    }
+
+    .branding h1 {
+        font-size: 2.5rem; /* Larger font size */
+    }
+
+    .intro h2 {
+        font-size: 2rem; /* Larger font size */
+    }
+
+    .about {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .about-text, .culture {
+        max-width: 45%; /* Allow more space for each column */
+    }
+
+    .service-card {
+        width: 30%; /* Adjust width for larger screens */
+    }
+
+    .portfolio-grid {
+        grid-template: repeat(3, 1fr); /* Three columns for large screens */
+    }
+
+    .evi-grid {
+        grid-template: repeat(3, 1fr); /* Three columns for large screens */
+    }
+
+    button {
+        padding: 0.8rem 1.5rem; /* Adjust button size for larger screens */
+    }
+}
+
+
+    </style>
+    </head>
+    <body>
+    <header class="hero">
+        <div class="container">
+        <div class="branding">
+            <h1>Akinrinade Mayowa</h1>
+        </div>
+        <nav class="navbar">
+            <ul>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#Reviews">Review</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="phone">+234 8102 662 132</li>
+            </ul>
+        </nav>
+        <div class="intro">
+            <h2>Web Develper and AI expert</h2>
+            <p>An exceptional Web Developer and AI Expert from Nigeria. willing to work and connect ariound the world</p>
+            <button>My Story</button>
+        </div>
+        </div>
+    </header>
+    <main>
+        <section id="about" class="about">
+        <div class="container">
+            <div class="about-text">
+            <h2>About Me</h2>
+            <p>I am a Web developer with half a decade experience in HTML, CSS, Javascript, Python, Bootstrap, Git, SQL, Paymenty system integration, Tailwind CSS, React.js, Mql5, Responsive Designs. i also have 
+                supporting skills like Graphics Design, UIUX Design, Good communication skills, Remote work experience, Writing, Typography which will help with my main skills in delivering top notch projects.</p>
+                <div class="skills-section">
+                    <h2 class="skills-title">My Skills</h2>
+                    <div class="skills-container">
+                        <div class="skill">
+                            <div class="skill-name">HTML5</div>
+                            <div class="skill-bar">
+                            <div class="skill-progress" style="--skill-width: 100%;"></div>
+                            </div>
+                            <div class="skill-percentage">100%</div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">CSS</div>
+                            <div class="skill-bar">
+                            <div class="skill-progress" style="--skill-width: 95%;"></div>
+                            </div>
+                            <div class="skill-percentage">100%</div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">Javascript</div>
+                            <div class="skill-bar">
+                            <div class="skill-progress" style="--skill-width: 80%;"></div>
+                            </div>
+                            <div class="skill-percentage">80%</div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">python</div>
+                            <div class="skill-bar">
+                            <div class="skill-progress" style="--skill-width: 60%;"></div>
+                            </div>
+                            <div class="skill-percentage">60%</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-section">
+                    <div class="skills-container">
+                        <div class="skill">
+                            <div class="skill-name">Bootstrap</div>
+                            <div class="skill-bar">
+                            <div class="skill-progress" style="--skill-width: 100%;"></div>
+                            </div>
+                            <div class="skill-percentage">100%</div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">Git</div>
+                            <div class="skill-bar">
+                            <div class="skill-progress" style="--skill-width: 90%;"></div>
+                            </div>
+                            <div class="skill-percentage">90%</div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">React.js</div>
+                            <div class="skill-bar">
+                            <div class="skill-progress" style="--skill-width: 80%;"></div>
+                            </div>
+                            <div class="skill-percentage">80%</div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">PaymentGateways</div>
+                            <div class="skill-bar">
+                            <div class="skill-progress" style="--skill-width: 100%;"></div>
+                            </div>
+                            <div class="skill-percentage">100%</div>
+                        </div>
+                    </div>
+                </div>
+                <button>Watch Video</button>
+            </div>
+            <div class="culture">
+            <h2>Culture</h2>
+            <p>I am  a developer who is good at what he does and loves to deliiver on time</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61556895240553/ShopWell"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+            </div>
+        </div>
+        </section>
+        <section id="services" class="services">
+        <div class="container">
+            <div class="service-card">
+            <h3>Mobile Design</h3>
+            <p>I am a Professional at creating mobile application to a top notch level for high performance</p>
+            <a href="https://wa.link/193lej"><button>Learn More</button></a>
+            </div>
+            <div class="service-card">
+            <h3>Web Design</h3>
+            <p>My professionalism covers creating websites and responsive ecommerce website for high performance</p>
+            <a href="https://wa.link/193lej"><button>Learn More</button></a>
+            </div>
+            <div class="service-card">
+            <h3>AI Developer</h3>
+            <p>My professionalism Covers development of Chatbot systems and CBT systems.</p>
+            <a href="https://wa.link/193lej"><button>Learn More</button></a>
+            </div>
+        </div>
+        </section>
+        <section class="freelance" id="contact">
+        <div class="container">
+            <h2>I'm Available for Freelance</h2>
+            <b>
+                <p>Phone-Number------08102662132</p>
+                <p>Address------8 Adeyemi str, Itele ota Ogunstate</p>
+                <p>Email------<a>akinrinaded7@gmail.com</a></p></b>
+            <p>Lets Bring your vision to live developing high-standard clean websites for your business solutions</p>
+            <a href="https://wa.link/193lej"><button>Get a Quote</button></a>
+        </div>
+        </section>
+        <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2>My Portfolio</h2>
+            <div class="portfolio-grid">
+            <a href="https://isaiahofillorin.github.io/ShopWell-U.I/home"><img src="portimg1.jpg" alt="Portfolio Item"></a>
+            <a href="https://isaiahofillorin.github.io/Ecommerce-Website-Sample./#"><img src="portimg2.jpg" alt="Portfolio Item"></a>
+            <a href="https://akinrinademayowa1.github.io/electric-car-industry-website/"><img src="portimg1.jpg" alt="Portfolio Item"></a>
+            </div>
+        </div>
+        </section>
+        <p></p>
+        <section class="portfolio">
+            <div class="container">
+                <h2 style="text-align: center;">Websites Performances</h2>
+                <div class="evi-grid">
+                <img src="evi1.jpg" alt="Portfolio Item">
+                <img src="evi2.jpg" alt="Portfolio Item">
+                <img src="evi3.jpg" alt="Portfolio Item">
+                </div>
+            </div>
+        </section>
+        <p></p>
+        <section id="Reviews" class="services" style="background-color: #f9c822;">
+            <h2 style="text-align: center; color: black;">Clients Reviews.</h2>
+            <div class="container">
+                <div class="service-card">
+                <h3>Aduradayo Ruth</h3>
+                <p>"Mayowa is a dedicated Developer who puts all his best in what he does. it was a great experience employing him at my institute"</p>
+                <div class="rating">
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star" style="color: gold;">&#9733;</span>
+                </div>
+                <button>Message</button>
+                </div>
+                <div class="service-card">
+                <h3>Opeyemi Emmanuel</h3>
+                <p>"It was a great experience employing Mayowa to develop my clothing brand website, he satisfied my needs to the last details"</p>
+                <div class="rating">
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                </div>
+                <button>Message</button>
+                </div>
+                <div class="service-card">
+                <h3>University of Ibadan (Agric.Dept)</h3>
+                <p>"Mayowa is a great Developer and it was a Really great experience having him develop our meat store website and CS Chatbot"</p>
+                <div class="rating">
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star filled">&#9733;</span>
+                    <span class="star" style="color: gold;">&#9733;</span>
+                </div>
+                <button>Message</button>
+                </div>
+            </div>
+            </section>
+    </main>
+    </body>
+    </html>
